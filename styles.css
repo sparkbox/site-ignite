@@ -93,3 +93,10 @@ header h2 {
   box-shadow: none;
   text-shadow: 0 1px #2E3134;
 }
+
+#drop {
+  border: 3px dashed #FFA700;
+  width: 90%;
+  margin: 0 auto;
+  height: 200px;
+}

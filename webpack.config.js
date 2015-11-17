@@ -1,4 +1,6 @@
+var path = require("path");
 var webpack = require('webpack');
+var componentPath = path.resolve('./components');
 
 module.exports = {
   entry: [
@@ -8,6 +10,10 @@ module.exports = {
     path: __dirname,
     filename: "app.js"
   }, 
+  resolve: {
+    root: componentPath,
+  },
+  "target": "atom",
   module: {
     loaders: [
       { 

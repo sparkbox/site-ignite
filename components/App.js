@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Drop from "Drop";
 const appHolder = document.getElementById('app');
 
 const App = () => {
   return (
-    <h1>Hello World!</h1>
+    <div className="view">
+      <Drop />
+    </div>
   );
 }
 
