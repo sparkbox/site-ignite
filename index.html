@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ignition</title>
+  </head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fonts.css">
+  <body>
+    <div id="app">
+    </div>
+
+    <div class="view">
+      <header>
+        <h1>gap-templates</h1>
+        <h2>version <span class="highlight">0.1.2</span></h2>
+      </header>
+      <div class="url">
+        192.168.41.183<span class="highlight">:8000</span>
+      </div>
+      <div class="actions">
+        <button onClick="require('shell').openExternal('http://192.168.41.183:8000')" class="btn">
+          Launch Website
+        </button>
+        <button onClick="require('shell').openExternal('http://github.com/sparkbox/gap-future')" class="btn">
+          Open GitHub Repo
+        </button>
+        <button class="btn">
+          Stop Server
+        </button>
+      </div>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
