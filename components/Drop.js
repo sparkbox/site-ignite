@@ -101,10 +101,10 @@ const Drop = React.createClass({
     return (
       <span>
         <Header data={this.state} />
-        <div id="drop"></div>
+        <div id="drop">
           <svg viewBox="0 0 34 46">
-            <g class="arrow" fill="none" transform="translate(1, 1)" stroke="#FFA800" stroke-width="2">
-              <path d="M16,0 L16,42" stroke-linecap="square" />
+            <g className="arrow" fill="none" transform="translate(1, 1)" stroke="#FFA800" strokeWidth="2">
+              <path d="M16,0 L16,42" strokeLinecap="square" />
               <path d="M0,26 L15.9023353,43 L32,26" />
             </g>
           </svg>
