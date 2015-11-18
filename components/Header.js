@@ -4,11 +4,11 @@ const Header = (props) => {
   return (
       <span>
         <header>
-          <h1>gap-templates</h1>
-          <h2>version <span className="highlight">0.1.2</span></h2>
+          <h1>{props.data.title}</h1>
+          <h2>version <span className="highlight">{props.data.version}</span></h2>
         </header>
         <div className="url">
-        {props.ip}<span className="highlight">{props.port}</span>
+        {props.data.ip}<span className="highlight">{props.data.port}</span>
         </div>
       </span>
   );
