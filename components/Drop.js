@@ -46,7 +46,7 @@ const Drop = React.createClass({
       const fullPath = filePath + '/' + x;
       const name = path.basename(fullPath, '.js');
 
-      return (name === 'gulpfile'); 
+      return (name === 'gulpfile');
     })
     .forEach((e) => {
         cd(filePath);
@@ -67,7 +67,14 @@ const Drop = React.createClass({
     return (
       <span>
         <Header ip={this.state.ip} port={this.state.port}/>
-        <div id="drop"></div>
+        <div id="drop">
+          <svg viewBox="0 0 34 46">
+            <g class="arrow" fill="none" transform="translate(1, 1)" stroke="#FFA800" stroke-width="2">
+              <path d="M16,0 L16,42" stroke-linecap="square" />
+              <path d="M0,26 L15.9023353,43 L32,26" />
+            </g>
+          </svg>
+        </div>
       </span>
     );
   }

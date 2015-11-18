@@ -27,7 +27,7 @@ app.on('ready', function() {
     'min-width': 480,
     'min-height': 320,
     'max-width': 720,
-    'max-height': 620,
+    'max-height': 480,
     'fullscreen': false,
     'title-bar-style': 'hidden-inset'
   });
