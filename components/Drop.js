@@ -49,11 +49,23 @@ const Drop = React.createClass({
     });
   },
 
-  runStartScript() {
-      const child = exec('npm start', {async:true});
-      this.setState({'pid': child.pid + 1});
+  installModules(packageJSON) {
+    const installProcess = exec('npm install', {async: true});
 
-      child.stdout.on('data', (data) => {
+    installProcess.on('exit', (code) => {
+        if (code === 0 && packageJSON.scripts.start) {
+          this.runStartScript();
+        } else {
+          console.log('no valid start script!');
+        }
+    });
+  },
+
+  runStartScript() {
+      const startProcess = exec('npm start', {async:true});
+      this.setState({'pid': startProcess.pid + 1});
+
+      startProcess.stdout.on('data', (data) => {
         const local = data.match(/localhost:\d{4}/);
 
         if (local && this.state.port === '') {
@@ -76,12 +88,7 @@ const Drop = React.createClass({
     .forEach((x) => {
         cd(filePath);
         const packageJSON = this.parsePackageJSON(x);
-
-        if ( packageJSON.scripts.start ) {
-          this.runStartScript();
-        } else {
-          console.log('no valid start script!');
-        }
+        this.installModules(packageJSON);
     });
   },
 
