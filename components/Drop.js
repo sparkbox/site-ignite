@@ -108,35 +108,47 @@ const Drop = React.createClass({
   },
 
   render() {
-    let button;
     let header;
+    let interactions;
+    let dropArea;
 
     if (this.state.pid) {
       header = (
         <Header data={this.state} />
       );
-      button = (
-        <button onClick={this.killProcess} className="btn">
-          Stop
-        </button>
+      interactions = (
+        <div className="actions">
+          <button onClick={this.killProcess} className="btn">
+            Stop Server
+          </button>
+        </div>
       );
+      dropArea = null;
     } else {
       header = null;
-      button = null;
+      interactions = null;
+      dropArea = (
+        <div id="drop">
+          <div className="drop-box">
+            <svg viewBox="0 0 34 46">
+              <g className="arrow" fill="none" transform="translate(1, 1)" stroke="#FFA800" strokeWidth="2">
+                <path d="M16,0 L16,42" strokeLinecap="square" />
+                <path d="M0,26 L15.9023353,43 L32,26" />
+              </g>
+            </svg>
+          </div>
+          <div className="drop-message">
+            Drag your project folder to the window
+          </div>
+        </div>
+      );
     }
 
     return (
       <span>
         {header}
-        <div id="drop">
-          <svg viewBox="0 0 34 46">
-            <g className="arrow" fill="none" transform="translate(1, 1)" stroke="#FFA800" strokeWidth="2">
-              <path d="M16,0 L16,42" strokeLinecap="square" />
-              <path d="M0,26 L15.9023353,43 L32,26" />
-            </g>
-          </svg>
-        </div>
-        {button}
+        {interactions}
+        {dropArea}
       </span>
     );
   }

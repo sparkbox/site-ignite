@@ -124,14 +124,19 @@ header h2 {
 }
 
 #drop {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+.drop-box {
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: 10vh;
-  left: 50%;
-  margin-left: -10vh;
-  height: 20vh;
-  width: 20vh;
+  top: 20vh;
+  left: 10vw;
+  height: 40vh;
+  width: 40vh;
   background: rgba(36, 36, 42, 0.3);
   box-shadow:
     0 -1px #1F2023,
@@ -141,6 +146,16 @@ header h2 {
   border-radius: 0.25rem;
 }
 
-#drop svg {
+.drop-box svg {
   width: 40%;
+}
+
+.drop-message {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 40vh;
+  width: 60vw;
+  top: 20vh;
+  left: 40vw;
 }
