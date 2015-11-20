@@ -9,18 +9,22 @@ const Drop = React.createClass({
   getInitialState() {
     return {
       'port': '',
+      'title': '',
+      'version': '',
       'ip': address.ip()
     };
   },
 
   componentDidMount() {
-    const target = document.getElementById('drop');
+    const target = document.body;
 
     target.ondragover = function () {
+      target.classList.add('hover');
       return false;
     };
 
     target.ondragleave = target.ondragend = function () {
+      target.classList.remove('hover');
       return false;
     };
 
@@ -53,10 +57,22 @@ const Drop = React.createClass({
     const installProcess = exec('npm install', {async: true});
 
     installProcess.on('exit', (code) => {
-        if (code === 0 && packageJSON.scripts.start) {
-          this.runStartScript();
+        if (code === 0 && packageJSON.scripts) {
+          if (packageJSON.scripts.start) {
+            this.runStartScript();
+          } else {
+            alert('No npm start script found');
+            this.setState({
+              title: '',
+              version: ''
+            });
+          }
         } else {
-          console.log('no valid start script!');
+          alert('No npm script found');
+          this.setState({
+            title: '',
+            version: ''
+          });
         }
     });
   },
@@ -66,12 +82,10 @@ const Drop = React.createClass({
       this.setState({'pid': startProcess.pid + 1});
 
       startProcess.stdout.on('data', (data) => {
-        const local = data.match(/localhost:\d{4}/);
+        const local = data.match(/:\d{4}/);
 
         if (local && this.state.port === '') {
-          const port = local[0].split(':')[1];
-
-          this.setState({'port': `:${port}`});
+          this.setState({'port': `${local}`});
         }
       });
   },
@@ -98,7 +112,7 @@ const Drop = React.createClass({
     if (this.state.pid) {
       button = (
         <button onClick={this.killProcess} className="btn">
-          Stop Server
+          Stop
         </button>
       );
     } else {
