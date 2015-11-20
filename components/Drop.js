@@ -134,7 +134,6 @@ const Drop = React.createClass({
       header = null;
       interactions = null;
       dropArea = (
-        <div id="drop">
           <div className="drop-content">
             <div className="drop-box">
               <svg viewBox="0 0 34 46">
@@ -148,7 +147,6 @@ const Drop = React.createClass({
               Drag your project folder to the window
             </div>
           </div>
-        </div>
       );
     }
 
