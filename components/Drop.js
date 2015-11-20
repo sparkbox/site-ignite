@@ -118,6 +118,12 @@ const Drop = React.createClass({
       );
       interactions = (
         <div className="actions">
+          <button className="btn">
+            Launch Website
+          </button>
+          <button className="btn">
+            GitHub Repository
+          </button>
           <button onClick={this.killProcess} className="btn">
             Stop Server
           </button>
