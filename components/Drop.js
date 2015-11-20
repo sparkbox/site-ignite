@@ -39,7 +39,8 @@ const Drop = React.createClass({
 
     this.setState({
       'title': parsedPackage.name,
-      'version': parsedPackage.version
+      'version': parsedPackage.version,
+      'repository': parsedPackage.repository.url
     });
 
     return parsedPackage;
@@ -97,7 +98,7 @@ const Drop = React.createClass({
       const fullPath = filePath + '/' + x;
       const name = path.basename(fullPath, '.json');
 
-      return (name === 'package'); 
+      return (name === 'package');
     })
     .forEach((x) => {
         cd(filePath);
@@ -108,20 +109,25 @@ const Drop = React.createClass({
 
   render() {
     let button;
+    let header;
 
     if (this.state.pid) {
+      header = (
+        <Header data={this.state} />
+      );
       button = (
         <button onClick={this.killProcess} className="btn">
           Stop
         </button>
       );
     } else {
+      header = null;
       button = null;
     }
 
     return (
       <span>
-        <Header data={this.state} />
+        {header}
         <div id="drop">
           <svg viewBox="0 0 34 46">
             <g className="arrow" fill="none" transform="translate(1, 1)" stroke="#FFA800" strokeWidth="2">
