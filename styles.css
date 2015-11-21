@@ -188,11 +188,29 @@ header h2 {
     inset 0 2px 5px rgba(31, 33, 35, 0.65)
   ;
   border-radius: 0.5rem;
+  transition: all ease-in-out 150ms;
+}
+
+.hover .drop-box {
+  background: #FFA800;
+  box-shadow: 0 1em 2.5em black;
 }
 
 .drop-box svg {
   width: 30%;
 }
+
+.drop-box svg .arrow {
+  fill: transparent;
+  stroke-width: 2px;
+  stroke: #FFA800;
+}
+
+.hover .drop-box svg .arrow {
+  stroke: white;
+}
+
+
 
 .drop-message {
   font-family:
@@ -200,19 +218,33 @@ header h2 {
     "Helvetica Neue",
     "Lucida Grande",
     sans-serif;
+  font-size: 1.25em;
+  width: 20rem;
   display: inline-block;
   margin-left: 4vw;
+  pointer-events: none;
+  position: relative;
 }
 
+.release-message,
+.loading-message,
+.start-message {
+  pointer-events: none;
+  transition: all ease-in-out 150ms;
+  position: absolute;
+}
 
 .release-message,
 .loading-message,
 .hover .start-message,
 .load .start-message {
-  display: none;
+  opacity: 0;
+  transform: scale(0.6);
 }
 
+.start-message,
 .hover .release-message,
 .load .loading-message {
-  display: block;
+  opacity: 1;
+  transform: scale(1);
 }
