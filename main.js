@@ -22,12 +22,12 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    'width': 520,
-    'height': 320,
-    'min-width': 480,
-    'min-height': 320,
-    'max-width': 720,
-    'max-height': 480,
+    'width': 580,
+    'height': 380,
+    'min-width': 580,
+    'min-height': 380,
+    'max-width': 580,
+    'max-height': 380,
     'fullscreen': false,
     'title-bar-style': 'hidden-inset'
   });

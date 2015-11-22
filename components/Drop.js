@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "Header";
+import DropArea from "DropArea";
 import fs from "fs";
 import path from "path";
 import shell from "shelljs/global";
@@ -19,6 +20,7 @@ const Drop = React.createClass({
     const target = document.body;
 
     target.ondragover = function () {
+      target.classList.remove('load');
       target.classList.add('hover');
       return false;
     };
@@ -29,6 +31,7 @@ const Drop = React.createClass({
     };
 
     target.ondrop = (e) => {
+      target.className = 'load';
       e.preventDefault();
       this.parseForBuild(e.dataTransfer.files[0].path);
     };
@@ -39,14 +42,18 @@ const Drop = React.createClass({
 
     this.setState({
       'title': parsedPackage.name,
-      'version': parsedPackage.version
+      'version': parsedPackage.version,
+      'repository': parsedPackage.repository.url
     });
 
     return parsedPackage;
   },
 
   killProcess() {
-    process.kill(this.state.pid)
+    const target = document.body;
+    target.className = '';
+
+    process.kill(this.state.pid);
 
     this.setState({
       'pid': ''
@@ -97,7 +104,7 @@ const Drop = React.createClass({
       const fullPath = filePath + '/' + x;
       const name = path.basename(fullPath, '.json');
 
-      return (name === 'package'); 
+      return (name === 'package');
     })
     .forEach((x) => {
         cd(filePath);
@@ -107,30 +114,41 @@ const Drop = React.createClass({
   },
 
   render() {
-    let button;
+    let header;
+    let interactions;
+    let dropArea;
 
     if (this.state.pid) {
-      button = (
-        <button onClick={this.killProcess} className="btn">
-          Stop
-        </button>
+      header = (
+        <Header data={this.state} />
       );
+      interactions = (
+        <div className="actions">
+          <button className="btn">
+            Launch Website
+          </button>
+          <button className="btn">
+            GitHub Repository
+          </button>
+          <button onClick={this.killProcess} className="btn">
+            Stop Server
+          </button>
+        </div>
+      );
+      dropArea = null;
     } else {
-      button = null;
+      header = null;
+      interactions = null;
+      dropArea = (
+        <DropArea data={this.state} />
+      );
     }
 
     return (
       <span>
-        <Header data={this.state} />
-        <div id="drop">
-          <svg viewBox="0 0 34 46">
-            <g className="arrow" fill="none" transform="translate(1, 1)" stroke="#FFA800" strokeWidth="2">
-              <path d="M16,0 L16,42" strokeLinecap="square" />
-              <path d="M0,26 L15.9023353,43 L32,26" />
-            </g>
-          </svg>
-        </div>
-        {button}
+        {header}
+        {interactions}
+        {dropArea}
       </span>
     );
   }
