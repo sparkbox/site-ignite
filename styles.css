@@ -1,6 +1,11 @@
+* {
+  pointer-events: none;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
+  pointer-events: auto;
 }
 
 body{
@@ -46,7 +51,6 @@ body:after {
 }
 
 .app-title {
-  pointer-events: none;
   width: 100%;
   position: absolute;
   text-align: center;
@@ -86,6 +90,10 @@ h4, h5, h6 {
   cursor: default;
 }
 
+.running {
+  animation: fade-in-up 1s ease-in-out;
+}
+
 header {
   padding: 1.5em 10vw;
 }
@@ -103,6 +111,7 @@ header h2 {
 }
 
 .url {
+  pointer-events: auto;
   margin: 0 10vw;
   font-weight: 100;
   color: white;
@@ -122,9 +131,11 @@ header h2 {
   margin: 1.5rem 10vw;
   display: flex;
   justify-content: space-between;
+  animation: fade-in-down 1s ease-in-out;
 }
 
 .btn {
+  pointer-events: auto;
   -webkit-user-select: none;
   font-family:
     "San Francisco",
@@ -267,7 +278,6 @@ header h2 {
   width: 20rem;
   display: inline-block;
   margin-left: 4vw;
-  pointer-events: none;
   position: relative;
   text-align: center;
 }
@@ -275,7 +285,6 @@ header h2 {
 .release-message,
 .loading-message,
 .start-message {
-  pointer-events: none;
   transition: all ease-in-out 150ms;
   position: absolute;
   width: 100%;
@@ -308,6 +317,28 @@ header h2 {
   100% {
     opacity: 0;
     transform: translateY(16px);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
