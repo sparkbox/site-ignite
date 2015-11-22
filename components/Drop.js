@@ -3,8 +3,9 @@ import Header from "Header";
 import DropArea from "DropArea";
 import fs from "fs";
 import path from "path";
-import shell from "shelljs/global";
+import shelljs from "shelljs/global";
 import address from "address";
+const shell = require("shell");
 
 const Drop = React.createClass({
   getInitialState() {
@@ -35,6 +36,13 @@ const Drop = React.createClass({
       e.preventDefault();
       this.parseForBuild(e.dataTransfer.files[0].path);
     };
+
+    const check = exec('which node', {async: true});
+    check.on("exit", (exit) => {
+      if (exit != 0) {
+        shell.openExternal('https://nodejs.org/en/download/');
+      }
+    });
   },
 
   parsePackageJSON(file) {
