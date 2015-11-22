@@ -306,6 +306,18 @@ header h2 {
   transform: scale(1);
 }
 
+.status-message {
+  font-family: monospace !important;
+  overflow: hidden;
+  height: 20px;
+  width: 100%;
+  text-align: left;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+}
+
 @keyframes float {
   100% {
     transform: translateY(-8px);
