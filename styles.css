@@ -9,6 +9,8 @@ html, body {
 }
 
 body{
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
   margin: 0;
   background: #34383E;
   box-shadow:
@@ -86,7 +88,6 @@ h1, h2, h3,
 h4, h5, h6 {
   font-weight: 100;
   margin: 0;
-  -webkit-user-select: none;
   cursor: default;
 }
 
@@ -112,6 +113,7 @@ header h2 {
 
 .url {
   pointer-events: auto;
+  -webkit-user-select: auto;
   margin: 0 10vw;
   font-weight: 100;
   color: white;
@@ -137,6 +139,7 @@ header h2 {
 .btn {
   pointer-events: auto;
   -webkit-user-select: none;
+  -webkit-app-region: no-drag;
   font-family:
     "San Francisco",
     "Helvetica Neue",
