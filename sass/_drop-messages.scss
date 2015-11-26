@@ -1,0 +1,49 @@
+.drop-message {
+  font-family:
+    "San Francisco",
+    "Helvetica Neue",
+    "Lucida Grande",
+    sans-serif;
+  font-size: 1.25em;
+  width: 20rem;
+  display: inline-block;
+  margin-left: 4vw;
+  position: relative;
+  text-align: center;
+}
+
+.release-message,
+.loading-message,
+.start-message {
+  transition: all ease-in-out 150ms;
+  position: absolute;
+  width: 100%;
+  margin-top: -14px;
+}
+
+.release-message,
+.loading-message,
+.hover .start-message,
+.load .start-message {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.start-message,
+.hover .release-message,
+.load .loading-message {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.status-message {
+  font-family: monospace !important;
+  overflow: hidden;
+  height: 20px;
+  width: 100%;
+  text-align: left;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+}
