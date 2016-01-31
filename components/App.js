@@ -6,6 +6,7 @@ import shelljs from "shelljs/global";
 import address from "address";
 import DropArea from "DropArea";
 import Header from "Header";
+import fixPath from "fix-path";
 const shell = require("shell");
 const appHolder = document.getElementById('app');
 
@@ -21,6 +22,7 @@ const App = React.createClass({
   },
 
   componentDidMount() {
+    fixPath();
     const target = document.body;
 
     target.ondragover = function () {

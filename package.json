@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "parallelshell 'webpack --watch' 'electron main.js'",
+    "package": "electron-packager ./ Ignite --platform=darwin --arch=all --version=0.34.0 --icon=./icon.icns",
     "prestart": "npm run sass",
     "sass": "node-sass sass/ -o css/",
     "rebuild": "electron-rebuild"
@@ -15,6 +16,7 @@
   },
   "author": "Sparkbox",
   "devDependencies": {
+    "electron-packager": "^5.2.1",
     "electron-prebuilt": "^0.34.0",
     "electron-rebuild": "^1.0.2",
     "node-sass": "^3.4.2"
@@ -25,6 +27,7 @@
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
+    "fix-path": "^1.1.0",
     "parallelshell": "^2.0.0",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",

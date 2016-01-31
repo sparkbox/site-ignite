@@ -1,3 +1,4 @@
 app.js
 **/*.log
 /node_modules
+*-darwin-*
