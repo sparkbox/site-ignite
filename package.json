@@ -4,7 +4,7 @@
   "description": "a GUI wrapper to start build processes",
   "main": "main.js",
   "scripts": {
-    "start": "parallelshell 'webpack --watch' 'electron main.js'",
+    "start": "webpack && parallelshell 'webpack --watch' 'electron main.js'",
     "package": "electron-packager ./ Ignite --platform=darwin --arch=all --version=0.34.0 --icon=./icon.icns",
     "prestart": "npm run sass",
     "sass": "node-sass sass/ -o css/",
@@ -32,6 +32,7 @@
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "shelljs": "^0.5.3",
+    "treekill": "^1.0.0",
     "webpack": "^1.12.6"
   }
 }

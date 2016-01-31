@@ -7,6 +7,7 @@ import address from "address";
 import DropArea from "DropArea";
 import Header from "Header";
 import fixPath from "fix-path";
+import treekill from "treekill";
 const shell = require("shell");
 const appHolder = document.getElementById('app');
 
@@ -54,10 +55,10 @@ const App = React.createClass({
     const target = document.body;
     target.className = '';
 
-    process.kill(this.state.pid);
+    treekill(this.state.process.pid);
 
     this.setState({
-      'pid': ''
+      'process': ''
     });
   },
 
@@ -95,14 +96,17 @@ const App = React.createClass({
   },
 
   runStartScript() {
-      const startProcess = exec('npm start', {async:true});
-      this.setState({'pid': startProcess.pid + 1});
+      const spawn = require('child_process').spawn;
+      const npm = spawn('npm', ['start']);
+      this.setState({'process': npm});
 
-      startProcess.stdout.on('data', (data) => {
+      npm.stdout.on('data', (data) => {
+        const stringData = data.toString('utf8');
+
         this.setState({
-          status: data 
+          status: stringData 
         });
-        const local = data.match(/:\d{4}/);
+        const local = stringData.match(/:\d{4}/);
 
         if (local && this.state.port === '') {
           this.setState({
@@ -156,7 +160,7 @@ const App = React.createClass({
       repoButton = null;
     }
 
-    if (this.state.pid) {
+    if (this.state.process) {
       header = (
         <Header data={this.state} />
       );
