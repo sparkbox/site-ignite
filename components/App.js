@@ -58,7 +58,8 @@ const App = React.createClass({
     treekill(this.state.process.pid);
 
     this.setState({
-      'process': ''
+      'process': '',
+      'port': ''
     });
   },
 
@@ -106,6 +107,7 @@ const App = React.createClass({
         this.setState({
           status: stringData 
         });
+
         const local = stringData.match(/:\d{4}/);
 
         if (local && this.state.port === '') {
@@ -160,7 +162,7 @@ const App = React.createClass({
       repoButton = null;
     }
 
-    if (this.state.process) {
+    if (this.state.port) {
       header = (
         <Header data={this.state} />
       );

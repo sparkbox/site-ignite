@@ -25,9 +25,6 @@ const DropArea = (props) => {
           <div className="loading-message">
             Loading the project
           </div>
-          <div className="status-message">
-            {props.data.status}
-          </div>
         </div>
       </div>
     </span>
