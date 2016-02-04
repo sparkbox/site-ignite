@@ -28,27 +28,44 @@ body {
 }
 
 header {
-  height: 80vh;
+  padding: 5vh 0;
+  /*min-height: 80vh;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 a {
-  color: #BF680B;
+  color: #E36001;
 }
 
-h1 {
-  text-transform: uppercase;
-  margin: 0;
-  padding: 10vh 0;
-  color: #ccc;
+.button {
+  color: white;
+  background-color: #E36001;
+  padding: 1rem 1.5rem;
+  font-size: 1.5em;
+  border-radius: 0.25rem;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 200;
+}
+
+.title {
+  margin-bottom: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-h1 span {
+.title-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-name {
+  text-transform: uppercase;
+  margin: 0;
+  color: #ccc;
   font-size: 10vw;
   line-height: 10vw;
   letter-spacing: 1vw;
@@ -57,14 +74,25 @@ h1 span {
   flex-direction: column;
 }
 
-h1 strong {
+.title-name strong {
   letter-spacing: 0.75vw;
-  color: #BF680B;
+  color: #E36001;
 }
 
-h1 img {
-  height: 22vw;
-  margin-right: 2vw;
+.title-description {
+  color: #777;
+  text-align: left;
+  font-size: 3vw;
+  font-weight: 200;
+  letter-spacing: 0.925vw;
+  text-transform: uppercase;
+  margin: 0;
+  padding-left: 0.875vw;
+}
+
+.title-image {
+  height: 28vw;
+  margin-right: 2.5vw;
 }
 
 section {
