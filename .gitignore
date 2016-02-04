@@ -2,3 +2,6 @@ app.js
 **/*.log
 /node_modules
 *-darwin-*
+_site
+.sass-cache
+.jekyll-metadata
