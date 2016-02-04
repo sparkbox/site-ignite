@@ -34,6 +34,10 @@ header {
   justify-content: center;
 }
 
+a {
+  color: #BF680B;
+}
+
 h1 {
   text-transform: uppercase;
   margin: 0;
@@ -88,4 +92,8 @@ section figure {
 
 path {
   fill: white;
+}
+
+footer {
+  padding: 1em 0;
 }
