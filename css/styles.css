@@ -153,6 +153,7 @@ section figure {
 
 figcaption {
   font-size: 2em;
+  padding: 0 2.5vw;
   margin-bottom: 8vh;
   font-weight: 100;
   order: -1;
