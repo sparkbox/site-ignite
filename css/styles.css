@@ -22,13 +22,13 @@ body {
   bottom: 0;
   left: 0;
   z-index: -1;
-  background-image: url("images/noise.png");
+  background-image: url("../images/noise.png");
   mix-blend-mode: overlay;
-  opacity: 0.1;
+  opacity: 0.05;
 }
 
 header {
-  padding: 5vh 0;
+  padding: 5vh 0 6vh;
   /*min-height: 80vh;*/
   display: flex;
   flex-direction: column;
@@ -37,6 +37,10 @@ header {
 
 a {
   color: #E36001;
+}
+
+.actions {
+  margin-top: 1.5rem;
 }
 
 .button {
@@ -48,10 +52,24 @@ a {
   display: inline-block;
   text-decoration: none;
   font-size: 200;
+  transition: all cubic-bezier(.35,.35,1,1.35) 250ms;
+  box-shadow: 0 0.75rem 1rem -0.25rem rgba(0,0,0,0.5);
+  /* *sigh* Safari */
+  -webkit-font-smoothing: antialiased;
+}
+
+.button:hover {
+  transform: translateY(-0.325rem);
+  box-shadow: 0 1.125rem 1.25rem -0.25rem rgba(0,0,0,0.4);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 0.75rem 1rem -0.25rem rgba(0,0,0,0.5);
 }
 
 .title {
-  margin-bottom: 5vh;
+  margin-bottom: 1vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +98,7 @@ a {
 }
 
 .title-description {
-  color: #777;
+  color: #aaa;
   text-align: left;
   font-size: 3vw;
   font-weight: 200;
@@ -93,9 +111,12 @@ a {
 .title-image {
   height: 28vw;
   margin-right: 2.5vw;
+  -webkit-filter: drop-shadow(0 0 1vw rgba(240,160,10,0.6));
+  /*-webkit-box-reflect: below -60px -webkit-linear-gradient(bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 20%, transparent 40%, transparent 100%);*/
 }
 
 section {
+  box-sizing: border-box;
   border: 1px solid black;
   border-left: none;
   border-right: none;
@@ -105,17 +126,37 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  padding: 10vh 0;
+  min-height: 100vh;
 }
 
 section img {
   width: 95vw;
   max-width: 52.5em;
+  margin-bottom: 8vh;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0,0,0,0.6);
+  box-shadow: 0 1vw 4vw rgba(0,0,0,0.8);
+}
+
+section a {
+  color: white;
 }
 
 section figure {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figcaption {
+  font-size: 2em;
+  margin-bottom: 8vh;
+  font-weight: 100;
+  order: -1;
 }
 
 path {
