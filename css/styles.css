@@ -112,7 +112,6 @@ a {
   height: 28vw;
   margin-right: 2.5vw;
   -webkit-filter: drop-shadow(0 0 1vw rgba(240,160,10,0.6));
-  /*-webkit-box-reflect: below -60px -webkit-linear-gradient(bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 20%, transparent 40%, transparent 100%);*/
 }
 
 section {
