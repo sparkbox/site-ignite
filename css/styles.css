@@ -152,11 +152,16 @@ section figure {
 }
 
 figcaption {
-  font-size: 1.925em;
+  font-size: 7.5vw;
   padding: 0 2.5vw;
   margin-bottom: 8vh;
   font-weight: 100;
   order: -1;
+}
+@media(min-width:33em) {
+  figcaption {
+    font-size: 1.925em;
+  }
 }
 
 path {
