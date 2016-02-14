@@ -44,48 +44,48 @@ h4, h5, h6 {
   cursor: default; }
 
 @font-face {
-  font-family: "San Francisco";
-  src: url(../fonts/SanFranciscoDisplay-Ultralight.otf);
+  font-family: 'San Francisco';
+  src: url(/System/Library/Fonts/SFNSDisplay-Ultralight.otf);
   font-weight: 100; }
 
 @font-face {
-  font-family: "San Francisco";
-  src: url(../fonts/SanFranciscoDisplay-Thin.otf);
+  font-family: 'San Francisco';
+  src: url(/System/Library/Fonts/SFNSDisplay-Thin.otf);
   font-weight: 200; }
 
 @font-face {
-  font-family: "San Francisco";
-  src: url(../fonts/SanFranciscoDisplay-Light.otf);
+  font-family: 'San Francisco';
+  src: url(/System/Library/Fonts/SFNSDisplay-Light.otf);
   font-weight: 300; }
 
 @font-face {
-  font-family: "San Francisco";
-  src: url(../fonts/SanFranciscoDisplay-Regular.otf);
+  font-family: 'San Francisco';
+  src: url(/System/Library/Fonts/SFNSDisplay-Regular.otf);
   font-weight: 400; }
 
 @font-face {
-  font-family: "San Francisco";
-  src: url(../fonts/SanFranciscoDisplay-Medium.otf);
+  font-family: 'San Francisco';
+  src: url(/System/Library/Fonts/SFNSDisplay-Medium.otf);
   font-weight: 500; }
 
 @font-face {
-  font-family: "San Francisco";
-  src: url(../fonts/SanFranciscoDisplay-Semibold.otf);
+  font-family: 'San Francisco';
+  src: url(/System/Library/Fonts/SFNSDisplay-Semibold.otf);
   font-weight: 600; }
 
 @font-face {
-  font-family: "San Francisco";
-  src: url(../fonts/SanFranciscoDisplay-Bold.otf);
+  font-family: 'San Francisco';
+  src: url(/System/Library/Fonts/SFNSDisplay-Bold.otf);
   font-weight: 700; }
 
 @font-face {
-  font-family: "San Francisco";
-  src: url(../fonts/SanFranciscoDisplay-Heavy.otf);
+  font-family: 'San Francisco';
+  src: url(/System/Library/Fonts/SFNSDisplay-Heavy.otf);
   font-weight: 800; }
 
 @font-face {
-  font-family: "San Francisco";
-  src: url(../fonts/SanFranciscoDisplay-Black.otf);
+  font-family: 'San Francisco';
+  src: url(/System/Library/Fonts/SFNSDisplay-Black.otf);
   font-weight: 900; }
 
 .app-title {
@@ -94,13 +94,15 @@ h4, h5, h6 {
   text-align: center;
   top: 0.5rem;
   font-size: 0.875em;
+  letter-spacing: 0.05em;
   font-weight: 200;
   color: white;
-  font-family: "San Francisco", "Helvetica Neue", "Lucida Grande", sans-serif; }
+  font-family: "San Francisco", "Helvetica Neue", sans-serif; }
 
 .view {
-  font-family: "San Francisco", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: "San Francisco", "Helvetica Neue", sans-serif;
   font-weight: 100;
+  letter-spacing: 0.05em;
   color: white;
   height: 100vh;
   width: 100vw;
@@ -184,8 +186,10 @@ header h2 {
   pointer-events: auto;
   -webkit-user-select: none;
   -webkit-app-region: no-drag;
-  font-family: "San Francisco", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: "San Francisco", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.05em;
   border-radius: 0.25rem;
+  line-height: 1;
   box-shadow: 0 1pt #5D5F63 inset, 0 -1pt #191B20 inset, 0 2pt 6pt rgba(0, 0, 0, 0.4);
   background: linear-gradient(#36393E, #232629);
   border: 1pt solid #1C1E22;
@@ -193,7 +197,7 @@ header h2 {
   text-shadow: 0 -1pt #2E3134;
   font-size: 0.875em;
   font-weight: 100;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.75rem;
   text-decoration: none; }
   .btn:focus {
     outline: none; }
@@ -288,7 +292,7 @@ header h2 {
   animation-direction: alternate; }
 
 .drop-message {
-  font-family: "San Francisco", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: "San Francisco", "Helvetica Neue", sans-serif;
   font-size: 1.25em;
   width: 20rem;
   display: inline-block;

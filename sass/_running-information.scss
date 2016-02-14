@@ -4,22 +4,16 @@
   text-align: center;
   top: 0.5rem;
   font-size: 0.875em;
+  letter-spacing: 0.05em;
   font-weight: 200;
   color: white;
-  font-family:
-    "San Francisco",
-    "Helvetica Neue",
-    "Lucida Grande",
-    sans-serif;
+  font-family: $system-fonts;
 }
 
 .view {
-  font-family:
-    "San Francisco",
-    "Helvetica Neue",
-    "Lucida Grande",
-    sans-serif;
+  font-family: $system-fonts;
   font-weight: 100;
+  letter-spacing: 0.05em;
   color: white;
   height: 100vh;
   width: 100vw;
