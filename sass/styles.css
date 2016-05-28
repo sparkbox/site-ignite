@@ -13,12 +13,6 @@ body {
   background: #34383E;
   box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.2);
   font-family: sans-serif; }
-  .lt-osx-yosemite body {
-    font-family: 'Lucida Grande', sans-serif; }
-  .lt-osx-elcapitan body {
-    font-family: 'Helvetica Neue', sans-serif; }
-  .osx-elcapitan body {
-    font-family: 'San Francisco', sans-serif; }
   body:before, body:after {
     content: '';
     display: block;
@@ -39,6 +33,15 @@ body {
     @media (-webkit-min-device-pixel-ratio: 2) {
       body:after {
         background-size: 50px 50px; } }
+
+.lt-osx-10-9 {
+  font-family: 'Lucida Grande', sans-serif; }
+
+.lt-osx-10-11 {
+  font-family: 'Helvetica Neue', sans-serif; }
+
+.osx-10-11 {
+  font-family: 'San Francisco', sans-serif; }
 
 ::selection {
   background: black;

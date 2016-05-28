@@ -2,8 +2,30 @@
 <html>
   <head>
     <title>Site Igniter</title>
+    <script>
+      const os = require('os');
+      var html = document.documentElement;
+      var num = os.release();
+      var release = Number(num.split('.',1));
+      if(os.platform() == 'darwin' ) {
+        if(release < 14) {
+          html.className='lt-osx-yosemite';
+        }
+        else if(release >= 15) {
+          html.className='osx-elcapitan';
+          var fonts  = document.createElement('link');
+          fonts.rel  = 'stylesheet';
+          fonts.type = 'text/css';
+          fonts.href = './css/osx-10-11-fonts.css';
+          fonts.media = 'all';
+          document.getElementsByTagName('head')[0].appendChild(fonts);
+        } else {
+          html.className='lt-osx-elcapitan';
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
-  <link rel="stylesheet" href="css/styles.css">
   <body>
     <div class="app-title">Site Igniter</div>
     <div id="app"></div>
