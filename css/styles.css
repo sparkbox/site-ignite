@@ -197,7 +197,7 @@ header h2 {
   text-shadow: 0 -1pt #2E3134;
   font-size: 0.875em;
   font-weight: 100;
-  padding: 0.5rem 1rem 0.75rem;
+  padding: 0.5rem 1rem 0.625rem;
   text-decoration: none; }
   .btn:focus {
     outline: none; }
